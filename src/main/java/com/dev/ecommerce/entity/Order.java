@@ -17,6 +17,7 @@ import lombok.NoArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.Builder;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name = "tb_orders")
@@ -39,6 +40,7 @@ public class Order {
 
 	@ManyToOne
 	@JoinColumn(name = "user_id")
+	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private User user;
 
 	@OneToOne(
