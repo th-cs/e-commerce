@@ -1,6 +1,7 @@
 package com.dev.ecommerce.entity;
 
 import com.dev.ecommerce.enums.Role;
+import java.util.ArrayList;
 import java.util.List;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -47,6 +48,5 @@ public class User {
 	@OneToMany(
 	mappedBy = "user",
 	cascade = CascadeType.ALL)
-	private List<Order> orders;
-
+	private List<Order> orders = new ArrayList<>();
 }
