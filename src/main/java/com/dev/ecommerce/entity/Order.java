@@ -35,6 +35,11 @@ public class Order {
 	@Column(nullable = false)
 	private Instant timestamp = Instant.now();
 
+	// 0 = WAITING_FOR_PAYMENT
+	// 1 = PAID
+	// 2 = SENT
+	// 3 = DELIVERED
+	// 4 = CANCELLED
 	@Column(nullable = false)
 	private OrderStatus status = OrderStatus.WAITING_FOR_PAYMENT;
 
