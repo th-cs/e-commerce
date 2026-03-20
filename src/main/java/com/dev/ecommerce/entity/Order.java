@@ -32,10 +32,10 @@ public class Order {
 	private Long id;
 
 	@Column(nullable = false)
-	private Instant moment;
+	private Instant timestamp = Instant.now();
 
 	@Column(nullable = false)
-	private OrderStatus status;
+	private OrderStatus status = OrderStatus.WAITING_FOR_PAYMENT;
 
 	@ManyToOne
 	@JoinColumn(name = "user_id")
