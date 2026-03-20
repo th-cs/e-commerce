@@ -42,6 +42,8 @@ public class User {
 	@Column(length = 128, nullable = false)
 	private String password;
 
+	// 0 = Admin
+	// 1 = User
 	@Column(nullable = false)
 	private Role role;
 
