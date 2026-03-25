@@ -15,6 +15,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.Builder;
 
 @Entity
 @Table(name = "tb_products")
@@ -22,6 +23,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 public class Product {
 
 	@Id
