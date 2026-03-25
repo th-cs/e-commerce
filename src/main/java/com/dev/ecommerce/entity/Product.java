@@ -34,10 +34,10 @@ public class Product {
 	@Column(columnDefinition = "TEXT", nullable = false)
 	private String description;
 
-	@Column(nullable = false)
+	@Column(scale = 2, nullable = false)
 	private double price;
 
-	@Column(nullable = false)
+	@Column(columnDefinition = "TEXT", nullable = false)
 	private String imgUrl;
 
 	@ManyToMany
