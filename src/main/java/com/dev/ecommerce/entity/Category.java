@@ -13,6 +13,8 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.Builder;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name = "tb_categories")
@@ -20,6 +22,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 public class Category {
 
 	@Id
@@ -30,5 +33,6 @@ public class Category {
 	private String name;
 
 	@ManyToMany(mappedBy = "categories")
+	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private Set<Product> products = new HashSet<>();
 }
