@@ -28,7 +28,7 @@ public class Payment {
 	private Long id;
 
 	@Column(nullable = false)
-	private Instant moment;
+	private Instant timestamp = Instant.now();
 
 	@OneToOne
 	@MapsId
