@@ -29,7 +29,7 @@ public class OrderItem {
 	@Column(nullable = false)
 	private int quantity;
 
-	@Column(nullable = false)
+	@Column(scale = 2, nullable = false)
 	private double price;
 
 	@ManyToOne
