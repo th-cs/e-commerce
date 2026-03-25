@@ -1,11 +1,14 @@
 package com.dev.ecommerce.entity;
 
+import java.util.Set;
+import java.util.HashSet;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Column;
+import jakarta.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Getter;
@@ -25,4 +28,7 @@ public class Category {
 
 	@Column(length = 100, nullable = false)
 	private String name;
+
+	@ManyToMany(mappedBy = "categories")
+	private Set<Product> products = new HashSet<>();
 }
