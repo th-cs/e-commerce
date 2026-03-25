@@ -20,7 +20,7 @@ public class UserService {
 		this.userMapper = userMapper;
 	}
 
-	public List<UserResponseDTO> listALlUsers() {
+	public List<UserResponseDTO> listAllUsers() {
 		return userRepository.findAll()
 			.stream()
 			.map(user -> userMapper.toDTO(user))
