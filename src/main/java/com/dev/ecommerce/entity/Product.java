@@ -1,6 +1,7 @@
 package com.dev.ecommerce.entity;
 
 import java.util.Set;
+import java.util.HashSet;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
@@ -8,6 +9,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Column;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.JoinColumn;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Getter;
@@ -38,5 +41,9 @@ public class Product {
 	private String imgUrl;
 
 	@ManyToMany
-	private Set<Category> categories;
+	@JoinTable(
+		name = "tb_product_categories",
+		joinColumns = @JoinColumn(name = "product_id"),
+		inverseJoinColumns = @JoinColumn(name = "category_id"))
+	private Set<Category> categories = new HashSet<>();
 }
