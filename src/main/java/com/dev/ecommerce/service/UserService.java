@@ -42,6 +42,9 @@ public class UserService {
 		User user = userRepository.getReferenceById(userId);
 			user.setName(userRequestDTO.name());
 			user.setEmail(userRequestDTO.email());
+			user.setPhoneNumber(userRequestDTO.phoneNumber());
+			user.setPassword(userRequestDTO.password());
+			user.setRole(userRequestDTO.role());
 
 		userRepository.save(user);
 		return userMapper.toDTO(user);
