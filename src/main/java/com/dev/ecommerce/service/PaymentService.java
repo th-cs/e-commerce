@@ -6,7 +6,7 @@ import com.dev.ecommerce.mapper.PaymentMapper;
 import com.dev.ecommerce.dto.PaymentDTO;
 import com.dev.ecommerce.repository.OrderRepository;
 import com.dev.ecommerce.entity.Order;
-import com.dev.ecommerce.enums.OrderStatus;
+import com.dev.ecommerce.entity.enums.OrderStatus;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;

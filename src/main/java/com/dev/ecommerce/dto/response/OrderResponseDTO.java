@@ -1,6 +1,6 @@
 package com.dev.ecommerce.dto.response;
 
-import com.dev.ecommerce.enums.OrderStatus;
+import com.dev.ecommerce.entity.enums.OrderStatus;
 import java.time.Instant;
 
 public record OrderResponseDTO(

@@ -2,7 +2,7 @@ package com.dev.ecommerce.dto.response;
 
 import java.util.List;
 import com.dev.ecommerce.entity.Order;
-import com.dev.ecommerce.enums.Role;
+import com.dev.ecommerce.entity.enums.Role;
 
 public record UserResponseDTO(
 	Long id,

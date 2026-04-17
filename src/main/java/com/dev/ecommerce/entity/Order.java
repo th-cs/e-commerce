@@ -1,6 +1,6 @@
 package com.dev.ecommerce.entity;
 
-import com.dev.ecommerce.enums.OrderStatus;
+import com.dev.ecommerce.entity.enums.OrderStatus;
 import java.time.Instant;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;

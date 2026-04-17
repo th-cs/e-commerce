@@ -1,6 +1,6 @@
 package com.dev.ecommerce.entity;
 
-import com.dev.ecommerce.enums.Role;
+import com.dev.ecommerce.entity.enums.Role;
 import java.util.ArrayList;
 import java.util.List;
 import jakarta.persistence.Entity;
