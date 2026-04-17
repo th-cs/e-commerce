@@ -1,4 +1,4 @@
-package com.dev.ecommerce.enums;
+package com.dev.ecommerce.entity.enums;
 
 public enum OrderStatus {
 	WAITING_FOR_PAYMENT,
