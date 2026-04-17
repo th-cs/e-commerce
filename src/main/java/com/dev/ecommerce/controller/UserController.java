@@ -3,6 +3,7 @@ package com.dev.ecommerce.controller;
 import com.dev.ecommerce.service.UserService;
 import com.dev.ecommerce.dto.request.UserRequestDTO;
 import com.dev.ecommerce.dto.response.UserResponseDTO;
+import com.dev.ecommerce.dto.response.UserListResponseDTO;
 import java.util.List;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,7 +29,7 @@ public class UserController {
 	}
 
 	@GetMapping
-	public ResponseEntity<List<UserResponseDTO>> listAllUsers() {
+	public ResponseEntity<List<UserListResponseDTO>> listAllUsers() {
 		return ResponseEntity.ok(userService.listAllUsers());
 	}
 
@@ -68,5 +69,4 @@ public class UserController {
 		}
 		return ResponseEntity.internalServerError().build();
 	}
-
 }

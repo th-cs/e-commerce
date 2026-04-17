@@ -5,6 +5,7 @@ import com.dev.ecommerce.repository.UserRepository;
 import com.dev.ecommerce.mapper.UserMapper;
 import com.dev.ecommerce.dto.request.UserRequestDTO;
 import com.dev.ecommerce.dto.response.UserResponseDTO;
+import com.dev.ecommerce.dto.response.UserListResponseDTO;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
@@ -20,10 +21,10 @@ public class UserService {
 		this.userMapper = userMapper;
 	}
 
-	public List<UserResponseDTO> listAllUsers() {
+	public List<UserListResponseDTO> listAllUsers() {
 		return userRepository.findAll()
 			.stream()
-			.map(user -> userMapper.toDTO(user))
+			.map(user -> userMapper.toListDTO(user))
 			.collect(Collectors.toList());
 	}
 
