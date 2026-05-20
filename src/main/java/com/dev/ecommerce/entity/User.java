@@ -33,6 +33,9 @@ public class User {
 	@Column(length = 100, nullable = false)
 	private String name;
 
+	@Column(columnDefinition = "TEXT",nullable = false)
+	private String photo;
+
 	@Column(length = 100, nullable = false, unique = true)
 	private String email;
 
@@ -51,4 +54,5 @@ public class User {
 	mappedBy = "user",
 	cascade = CascadeType.ALL)
 	private List<Order> orders = new ArrayList<>();
+
 }

@@ -1,6 +1,7 @@
 package com.dev.ecommerce.service;
 
 import com.dev.ecommerce.entity.User;
+import com.dev.ecommerce.entity.enums.Role;
 import com.dev.ecommerce.repository.UserRepository;
 import com.dev.ecommerce.mapper.UserMapper;
 import com.dev.ecommerce.dto.request.UserRequestDTO;
@@ -32,9 +33,22 @@ public class UserService {
 		return userMapper.toDTO(userRepository.getReferenceById(userId));
 	}
 
-	public UserResponseDTO createUser(UserRequestDTO userRequestDTO) {
-		return userMapper.toDTO(
-			userRepository.save(userMapper.toEntity(userRequestDTO)));
+//	public UserResponseDTO createUser(UserRequestDTO userRequestDTO) {
+//		return userMapper.toDTO(
+//			userRepository.save(userMapper.toEntity(userRequestDTO)));
+//	}
+
+	public UserResponseDTO createUser(String name, String path, String email,
+	String phoneNumber, String password) {
+		User user = new User();
+			user.setName(name);
+			user.setEmail(email);
+			user.setPhoto(path);
+			user.setPhoneNumber(phoneNumber);
+			user.setPassword(password);
+			user.setRole(Role.ROLE_USER);
+		userRepository.save(user);
+		return userMapper.toDTO(user);
 	}
 
 	public UserResponseDTO updateUser(Long userId,

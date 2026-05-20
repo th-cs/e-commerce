@@ -12,5 +12,10 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  output:
+    ansi:
+      enabled: always
 server:
   port: 8080
+upload:
+  dir: "uploads/photos"
